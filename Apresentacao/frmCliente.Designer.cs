@@ -37,6 +37,8 @@ namespace Apresentacao
             this.label3 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.radioPessoaFisica = new System.Windows.Forms.RadioButton();
+            this.radioPessoaJuridica = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lstCliente
@@ -106,7 +108,7 @@ namespace Apresentacao
             // btnAdicionar
             // 
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(12, 224);
+            this.btnAdicionar.Location = new System.Drawing.Point(12, 369);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(157, 47);
             this.btnAdicionar.TabIndex = 3;
@@ -114,11 +116,37 @@ namespace Apresentacao
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
+            // radioPessoaFisica
+            // 
+            this.radioPessoaFisica.AutoSize = true;
+            this.radioPessoaFisica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioPessoaFisica.Location = new System.Drawing.Point(113, 41);
+            this.radioPessoaFisica.Name = "radioPessoaFisica";
+            this.radioPessoaFisica.Size = new System.Drawing.Size(125, 24);
+            this.radioPessoaFisica.TabIndex = 4;
+            this.radioPessoaFisica.TabStop = true;
+            this.radioPessoaFisica.Text = "Pessoa Física";
+            this.radioPessoaFisica.UseVisualStyleBackColor = true;
+            // 
+            // radioPessoaJuridica
+            // 
+            this.radioPessoaJuridica.AutoSize = true;
+            this.radioPessoaJuridica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioPessoaJuridica.Location = new System.Drawing.Point(255, 41);
+            this.radioPessoaJuridica.Name = "radioPessoaJuridica";
+            this.radioPessoaJuridica.Size = new System.Drawing.Size(138, 24);
+            this.radioPessoaJuridica.TabIndex = 4;
+            this.radioPessoaJuridica.TabStop = true;
+            this.radioPessoaJuridica.Text = "Pessoa Jurídica";
+            this.radioPessoaJuridica.UseVisualStyleBackColor = true;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(794, 423);
+            this.Controls.Add(this.radioPessoaJuridica);
+            this.Controls.Add(this.radioPessoaFisica);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
@@ -129,7 +157,6 @@ namespace Apresentacao
             this.Controls.Add(this.lstCliente);
             this.Name = "frmCliente";
             this.Text = "Cadastro de Cliente";
-            this.Load += new System.EventHandler(this.frmCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +172,7 @@ namespace Apresentacao
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.RadioButton radioPessoaFisica;
+        private System.Windows.Forms.RadioButton radioPessoaJuridica;
     }
 }

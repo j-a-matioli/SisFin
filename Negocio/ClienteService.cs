@@ -16,14 +16,15 @@ namespace Negocio
             _repository = new ClienteRepository();
         }
 
-        public void CadastrarCliente(int id, string nome, string email)
+        public void CadastrarCliente(int id, TipoPessoa tipoPessoa, string nome, string email)
         {
-            // Validações e regras de negócio aqui
+            // Insira as validações e regras de negócio aqui
             // Por exemplo, verificar se o email já está cadastrado
 
             var cliente = new Cliente
             {
                 Id = id,
+                tipoPessoa = tipoPessoa,
                 Nome = nome,
                 Email = email
             };

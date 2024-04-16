@@ -16,7 +16,8 @@ namespace Apresentacao
 
         private void frmCliente_Load(object sender, System.EventArgs e)
         {
-
+            radioPessoaFisica.Text = TipoPessoa.PESSOA_FISICA.ToString();
+            radioPessoaJuridica.Text = TipoPessoa.PESSOA_JURIDICA.ToString();
         }
 
         private void atualizaListaCliente()
@@ -33,8 +34,10 @@ namespace Apresentacao
             int id = int.Parse(txtId.Text);
             string nome = txtNome.Text;
             string email = txtEmail.Text;
+            TipoPessoa tp = radioPessoaFisica.Checked ? TipoPessoa.PESSOA_FISICA : TipoPessoa.PESSOA_JURIDICA;
             
-            _clienteService.CadastrarCliente(id, nome, email);
+            _clienteService.CadastrarCliente(id, tp, nome, email);
+            
 
             atualizaListaCliente();
         }
