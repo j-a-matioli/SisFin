@@ -29,7 +29,6 @@ namespace Apresentacao
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstCliente = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,17 +38,9 @@ namespace Apresentacao
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.radioPessoaFisica = new System.Windows.Forms.RadioButton();
             this.radioPessoaJuridica = new System.Windows.Forms.RadioButton();
+            this.dgCliente = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCliente)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstCliente
-            // 
-            this.lstCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstCliente.FormattingEnabled = true;
-            this.lstCliente.ItemHeight = 20;
-            this.lstCliente.Location = new System.Drawing.Point(413, 12);
-            this.lstCliente.Name = "lstCliente";
-            this.lstCliente.Size = new System.Drawing.Size(375, 404);
-            this.lstCliente.TabIndex = 0;
             // 
             // label1
             // 
@@ -108,7 +99,7 @@ namespace Apresentacao
             // btnAdicionar
             // 
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(12, 369);
+            this.btnAdicionar.Location = new System.Drawing.Point(625, 18);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(157, 47);
             this.btnAdicionar.TabIndex = 3;
@@ -120,7 +111,7 @@ namespace Apresentacao
             // 
             this.radioPessoaFisica.AutoSize = true;
             this.radioPessoaFisica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioPessoaFisica.Location = new System.Drawing.Point(113, 41);
+            this.radioPessoaFisica.Location = new System.Drawing.Point(136, 22);
             this.radioPessoaFisica.Name = "radioPessoaFisica";
             this.radioPessoaFisica.Size = new System.Drawing.Size(125, 24);
             this.radioPessoaFisica.TabIndex = 4;
@@ -132,7 +123,7 @@ namespace Apresentacao
             // 
             this.radioPessoaJuridica.AutoSize = true;
             this.radioPessoaJuridica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioPessoaJuridica.Location = new System.Drawing.Point(255, 41);
+            this.radioPessoaJuridica.Location = new System.Drawing.Point(136, 52);
             this.radioPessoaJuridica.Name = "radioPessoaJuridica";
             this.radioPessoaJuridica.Size = new System.Drawing.Size(138, 24);
             this.radioPessoaJuridica.TabIndex = 4;
@@ -140,11 +131,20 @@ namespace Apresentacao
             this.radioPessoaJuridica.Text = "Pessoa Jurídica";
             this.radioPessoaJuridica.UseVisualStyleBackColor = true;
             // 
+            // dgCliente
+            // 
+            this.dgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCliente.Location = new System.Drawing.Point(12, 207);
+            this.dgCliente.Name = "dgCliente";
+            this.dgCliente.Size = new System.Drawing.Size(770, 204);
+            this.dgCliente.TabIndex = 5;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 423);
+            this.Controls.Add(this.dgCliente);
             this.Controls.Add(this.radioPessoaJuridica);
             this.Controls.Add(this.radioPessoaFisica);
             this.Controls.Add(this.btnAdicionar);
@@ -154,17 +154,16 @@ namespace Apresentacao
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lstCliente);
             this.Name = "frmCliente";
             this.Text = "Cadastro de Cliente";
+            this.Load += new System.EventHandler(this.frmCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
@@ -174,5 +173,6 @@ namespace Apresentacao
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.RadioButton radioPessoaFisica;
         private System.Windows.Forms.RadioButton radioPessoaJuridica;
+        private System.Windows.Forms.DataGridView dgCliente;
     }
 }
