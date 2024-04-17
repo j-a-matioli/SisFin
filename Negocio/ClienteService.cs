@@ -33,6 +33,15 @@ namespace Negocio
 
         }
 
+        public void CadastrarCliente(Cliente cliente)
+        {
+            // Insira as validações e regras de negócio aqui
+            // Por exemplo, verificar se o email já está cadastrado
+
+            _repository.Adicionar(cliente);
+
+        }
+
         public IEnumerable<Cliente> ObterTodos()
         {
             return _repository.ObterTodos();
