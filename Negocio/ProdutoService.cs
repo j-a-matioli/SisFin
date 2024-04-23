@@ -7,57 +7,56 @@ using Dados;
 
 namespace Negocio
 {
-    public class ClienteService
+    public class ProdutoService
     {
-        private ClienteRepository _repository;
+        private readonly ProdutoRepository _repository;
 
-        public ClienteService()
+        public ProdutoService()
         {
-            _repository = new ClienteRepository();
+            _repository = new ProdutoRepository();
         }
 
-        public void Insert(int id, TipoPessoa tipoPessoa, string nome, string email)
+        public void Insert(int id, string nome, double preco)
         {
             // Insira as validações e regras de negócio aqui
             // Por exemplo, verificar se o email já está cadastrado
 
-            var cliente = new Cliente
+            var produto = new Produto
             {
                 Id = id,
-                tipoPessoa = tipoPessoa,
                 Nome = nome,
-                Email = email
+                Preco = preco
             };
 
-            _repository.Insert(cliente);
+            _repository.Insert(produto);
 
         }
 
-        public void Insert(Cliente cliente)
+        public void Insert(Produto produto)
         {
             // Insira as validações e regras de negócio aqui
             // Por exemplo, verificar se o email já está cadastrado
 
-            _repository.Insert(cliente);
+            _repository.Insert(produto);
 
         }
 
-        public Cliente FindById(int id)
+        public Produto FindById(int id)
         {
-            foreach(Cliente c in _repository.getAll())
+            foreach (Produto c in _repository.getAll())
             {
                 if (c.Id == id) return c;
             }
             return null;
         }
 
-        public IEnumerable<Cliente> ObterTodos()
+        public IEnumerable<Produto> ObterTodos()
         {
             return _repository.ObterTodos();
         }
-        public IList<Cliente> getAll()
+        public IList<Produto> getAll()
         {
-            return _repository.ObterTodos().ToList<Cliente>();
+            return _repository.ObterTodos().ToList<Produto>();
         }
 
     }
