@@ -55,7 +55,7 @@ namespace Negocio
         {
             return _repository.ObterTodos();
         }
-        public IList<Cliente> getAll()
+        public List<Cliente> getAll()
         {
             return _repository.ObterTodos().ToList<Cliente>();
         }

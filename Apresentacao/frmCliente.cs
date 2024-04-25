@@ -34,7 +34,7 @@ namespace Apresentacao
                 c.Nome = "Cliente numero " + n.ToString();
                 c.Email = "cl" + n.ToString() + "@exemplo.com.br";
                 c.tipoPessoa = (n % 2) == 0 ? TipoPessoa.PESSOA_FISICA : TipoPessoa.PESSOA_JURIDICA;
-                _clienteService.CadastrarCliente(c);
+                _clienteService.Insert(c);
             }
         }
 
@@ -82,7 +82,7 @@ namespace Apresentacao
             string email = txtEmail.Text;
             TipoPessoa tp = radioPessoaFisica.Checked ? TipoPessoa.PESSOA_FISICA : TipoPessoa.PESSOA_JURIDICA;
             
-            _clienteService.CadastrarCliente(id, tp, nome, email);
+            _clienteService.Insert(id, tp, nome, email);
             
 
             atualizaListaCliente();

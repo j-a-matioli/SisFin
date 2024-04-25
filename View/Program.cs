@@ -54,7 +54,7 @@ namespace View
 
 
             vendaServ.Insert(2, cliServ.FindById(3), DateTime.Now, "Venda novo OS Ruindows", 0, 99874.50);
-            itemVendaServ.Insert(4, vendaServ.FindById(2), prodServ.FindById(4), 1550, 0, 2590.75);
+            itemVendaServ.Insert(4, vendaServ.FindById(2), prodServ.FindById(2), 1550, 0, 2590.75);
             itemVendaServ.Insert(5, vendaServ.FindById(2), prodServ.FindById(5), 1350, 0, 1389.76);
 
             foreach (Venda v in vendaServ.getAll())
