@@ -72,9 +72,22 @@ namespace View
                 Console.WriteLine(Environment.NewLine);
             }
 
+            Console.WriteLine("\nCONTAS A RECEBER");
+
+            ContaReceberService ctaServ = new ContaReceberService();
+            ctaServ.Insert(1, (decimal)99.75, DateTime.Now, DateTime.Now.AddDays(30), 
+                        MeioDePagamento.DINHEIRO, EstadoPagamento.PENDENTE);
+            ctaServ.Insert(2, (decimal)281.75, DateTime.Now, DateTime.Now.AddDays(60), 
+                MeioDePagamento.DINHEIRO, EstadoPagamento.PENDENTE);
+
+            foreach(ContaReceber cta in ctaServ.getAll())
+            {
+                Console.WriteLine("{0} - {1} - {2} - {3}",
+                    cta.Id, cta.Valor, cta.DataCadastro, cta.DataVencimento);
+            }
 
 
-             Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
