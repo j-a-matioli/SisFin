@@ -16,7 +16,7 @@ namespace Negocio
             _repository = new ClienteRepository();
         }
 
-        public void Insert(int id, TipoPessoa tipoPessoa, string nome, string email)
+        public void Insert(int id, TipoPessoa tipoPessoa, string nome, string email, DateTime? dtNasc)
         {
             // Insira as validações e regras de negócio aqui
             // Por exemplo, verificar se o email já está cadastrado
@@ -26,7 +26,8 @@ namespace Negocio
                 Id = id,
                 tipoPessoa = tipoPessoa,
                 Nome = nome,
-                Email = email
+                Email = email,
+                DataNascimento = dtNasc
             };
 
             _repository.Insert(cliente);

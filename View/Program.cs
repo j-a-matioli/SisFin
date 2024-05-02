@@ -18,14 +18,15 @@ namespace View
             ItemVendaService itemVendaServ = new ItemVendaService();
 
             //Insere alguns clientes
-            cliServ.Insert(1, TipoPessoa.PESSOA_FISICA, "Marcos Mariota", "mariota@exemplo.com");
-            cliServ.Insert(2, TipoPessoa.PESSOA_FISICA, "Carla Kambota", "caka@capisce.com");
-            cliServ.Insert(3, TipoPessoa.PESSOA_FISICA, "Microsoft Corp.", "ms@microsoft.com");
+            DateTime dtNasc = new DateTime(2000, 05, 09, 0, 0, 0);
+            cliServ.Insert(1, TipoPessoa.PESSOA_FISICA, "Marcos Mariota", "mariota@exemplo.com", dtNasc);
+            cliServ.Insert(2, TipoPessoa.PESSOA_FISICA, "Carla Kambota", "caka@capisce.com", new DateTime(1994, 10, 10, 17, 30, 55));
+            cliServ.Insert(3, TipoPessoa.PESSOA_FISICA, "Microsoft Corp.", "ms@microsoft.com", null);
             Console.WriteLine("CLIENTES");
             foreach (Cliente cliente in cliServ.getAll())
             {
-                Console.WriteLine("{0} - {1} - {2} - {3}",
-                    cliente.Id, cliente.Nome, cliente.tipoPessoa, cliente.Email);
+                Console.WriteLine("{0} - {1} - {2} - {3} - {4}",
+                    cliente.Id, cliente.Nome, cliente.tipoPessoa, cliente.Email, cliente.DataNascimento);
             }
 
 

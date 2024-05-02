@@ -13,6 +13,7 @@ namespace Dados
         public TipoPessoa tipoPessoa { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
+        public DateTime? DataNascimento { get; set; }
 
         public override bool Equals(object obj)
         {
